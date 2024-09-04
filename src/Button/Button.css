@@ -1,0 +1,48 @@
+:root {
+    --white-color: #fff;
+}
+
+button {
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 100%;
+    margin: 20px;
+    border: 0;
+    color: var(--white-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+button:hover
+{
+    letter-spacing: 0.3rem;
+}
+.start {
+    background-color: green;
+    color: var(--white-color);
+}
+
+.start:hover {
+    color: green;
+    background-color: var(--white-color);
+}
+
+.stop {
+    background-color: red;
+    color: var(--white-color);
+}
+
+.stop:hover {
+    color: red;
+    background-color: var(--white-color);
+}
+
+.reset {
+    background-color: cadetblue;
+    color: var(--white-color);
+}
+
+.reset:hover {
+    color: cadetblue;
+    background-color: var(--white-color);
+}
