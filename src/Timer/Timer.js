@@ -11,11 +11,10 @@ class Timer extends React.Component {
             minute: 0,
             second: 0,
             isStart: false,
-            currentColor: 0, // برای کنترل رنگ box-shadow
+            currentColor: 0, 
         };
     }
 
-    // آرایه‌ای از رنگ‌ها برای box-shadow
     colors = ["#18dffc",
         "#0a4644",
        " #c0a266",
@@ -65,7 +64,6 @@ class Timer extends React.Component {
                 isStart: true,
             });
 
-            // تایمر هر ثانیه افزایش پیدا کند
             interval = setInterval(() => {
                 this.setState({
                     second: this.state.second + 1,
@@ -85,7 +83,6 @@ class Timer extends React.Component {
                 }
             }, 1000);
 
-            // تغییر رنگ box-shadow هر 1 ثانیه
             colorInterval = setInterval(() => {
                 this.setState((prevState) => ({
                     currentColor: (prevState.currentColor + 1) % this.colors.length,
@@ -98,17 +95,17 @@ class Timer extends React.Component {
         this.setState({
             isStart: false,
         });
-        clearInterval(interval); // توقف تایمر
-        clearInterval(colorInterval); // توقف تغییر رنگ‌ها
+        clearInterval(interval); 
+        clearInterval(colorInterval); 
     };
 
     Reset = () => {
-        this.Stop(); // توقف تایمر و تغییر رنگ‌ها
+        this.Stop(); 
         this.setState({
             hour: 0,
             minute: 0,
             second: 0,
-            currentColor: 0, // تنظیم رنگ به حالت اولیه
+            currentColor: 0, 
         });
     };
 
