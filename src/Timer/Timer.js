@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../Button/Button";
 import "./Timer.css"
+import "../Button/Button.css"
 let interval, colorInterval;
-
 class Timer extends React.Component {
     constructor() {
         super();
@@ -11,13 +10,13 @@ class Timer extends React.Component {
             minute: 0,
             second: 0,
             isStart: false,
-            currentColor: 0, 
+            currentColor: 0,
         };
     }
 
     colors = ["#18dffc",
         "#0a4644",
-       " #c0a266",
+        " #c0a266",
         "#dce0d6",
         "#380e3b",
         "#15355a",
@@ -27,7 +26,7 @@ class Timer extends React.Component {
         "#a8c9f0",
         "#e70867",
         "#d6fac1",
-       " #e5c1fa",
+        " #e5c1fa",
         "#ffc000",
         "#f1f7fc",
         "#edf8dc",
@@ -95,35 +94,37 @@ class Timer extends React.Component {
         this.setState({
             isStart: false,
         });
-        clearInterval(interval); 
-        clearInterval(colorInterval); 
+        clearInterval(interval);
+        clearInterval(colorInterval);
     };
 
     Reset = () => {
-        this.Stop(); 
+        this.Stop();
         this.setState({
             hour: 0,
             minute: 0,
             second: 0,
-            currentColor: 0, 
+            currentColor: 0,
         });
     };
-
     render() {
         const { hour, minute, second, currentColor } = this.state;
 
-        // رنگ فعلی box-shadow
         const boxShadowStyle = {
             boxShadow: `0 0 40px ${this.colors[currentColor]}`,
         };
-
         return (
             <>
                 <h3 className="timer" style={boxShadowStyle}>
                     {`${hour > 9 ? hour : "0" + hour} : ${minute > 9 ? minute : "0" + minute
                         } : ${second > 9 ? second : "0" + second}`}
                 </h3>
-                <Button Start={this.Start} Stop={this.Stop} Reset={this.Reset} />
+                <div className="button">
+                    <button onClick={this.Start} className="start">Start</button>
+                    <button onClick={this.Stop} className="stop">Stop</button>
+                    <button onClick={this.Reset} className="reset">Reset</button>
+                    <button onClick={this.props.handleLight} className="changeBg">change Bg</button>
+                </div>
             </>
         );
     }

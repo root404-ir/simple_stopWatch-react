@@ -13,10 +13,11 @@ button {
     font-weight: bold;
     transition: all 0.5s ease;
 }
-button:hover
-{
+
+button:hover {
     letter-spacing: 0.3rem;
 }
+
 .start {
     background-color: green;
     color: var(--white-color);
@@ -45,4 +46,13 @@ button:hover
 .reset:hover {
     color: cadetblue;
     background-color: var(--white-color);
+}
+
+.changeBg {
+    background-color: #009089;
+}
+
+.changeBg:hover {
+    background-color: #fff;
+    color: #009089;
 }

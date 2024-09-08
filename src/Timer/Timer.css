@@ -16,20 +16,9 @@
     border-radius: 100%;
     width: 300px;
     height: 300px;
-    /* box-shadow: 0 0 40px #128267; */
     font-size: 2rem;
+    color: coral;
 }
-/* 
-@keyframes rgb {
-    0% {
-        box-shadow: 0 0 40px #501282;
-    }
-
-    50% {
-        box-shadow: 0 0 40px #f70492;
-    }
-
-    100% {
-        box-shadow: 0 0 40px #33ff00;
-    }
-} */
+.white{
+    color: black;
+}
